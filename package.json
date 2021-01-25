@@ -1,0 +1,27 @@
+{
+  "name": "show-me-your-plate",
+  "version": "1.0.0",
+  "description": "Capstone Project: Find Farms, Markets, and Resources related to local food in the Kansas City area",
+  "main": "server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArlayshaO/Show-Me-Your-Plate.git"
+  },
+  "keywords": [
+    "API",
+    "node.js"
+  ],
+  "author": "Arlaysha Osborn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ArlayshaO/Show-Me-Your-Plate/issues"
+  },
+  "homepage": "https://github.com/ArlayshaO/Show-Me-Your-Plate#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.11.12"
+  }
+}
