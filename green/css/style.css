@@ -90,7 +90,7 @@ p, ul, ol, figure {
 a {
   -webkit-transition: .3s all;
   transition: .3s all;
-  color: #B2D430;
+  color: #639720;
 }
 
 a:hover, a:focus, a:active {
@@ -103,7 +103,7 @@ a.hover-reverse {
 }
 
 a.hover-reverse:hover, a.hover-reverse:focus, a.hover-reverse:active {
-  color: #B2D430;
+  color: #639720;
   text-decoration: none;
 }
 
@@ -119,7 +119,7 @@ a.hover-reverse:hover, a.hover-reverse:focus, a.hover-reverse:active {
 
 .probootstrap-logo {
   float: left;
-  color: #B2D430;
+  color: #639720;
   padding-left: 20px;
   font-size: 20px;
   display: block;
@@ -129,7 +129,7 @@ a.hover-reverse:hover, a.hover-reverse:focus, a.hover-reverse:active {
 }
 
 .probootstrap-logo:hover, .probootstrap-logo:focus, .probootstrap-logo:active {
-  color: #B2D430;
+  color: #639720;
 }
 
 @media screen and (max-width: 768px) {
@@ -241,7 +241,7 @@ a.hover-reverse:hover, a.hover-reverse:focus, a.hover-reverse:active {
 }
 
 .probootstrap-main-nav li a:hover {
-  color: #B2D430;
+  color: #639720;
 }
 
 .probootstrap-mobile-menu-active.show .probootstrap-main-nav li a {
