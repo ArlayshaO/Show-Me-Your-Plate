@@ -1,11 +1,14 @@
 
-
+// Note: This example requires that you consent to location sharing when
+// prompted by your browser. If you see the error "The Geolocation service
+// failed.", it means you probably did not give permission for the browser to
+// locate you.
  let map, infoWindow;
 
  function initMap() {
    map = new google.maps.Map(document.getElementById("map"), {
      center: { lat: 39.099724, lng: -94.578331 },
-     zoom: 6,
+     zoom: 11,
      mapTypeId: 'hybrid'
    });
 infoWindow = new google.maps.InfoWindow();

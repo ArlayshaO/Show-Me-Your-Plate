@@ -16,6 +16,13 @@
       <script src="js/vendor/html5shiv.min.js"></script>
       <script src="js/vendor/respond.min.js"></script>
     <![endif]-->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSk2wd9IpR6G1KhFAdYuh_ZrQC6T5LEd0&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script src="/Public/map.js"></script>
   </head>
   <body>
 
@@ -71,6 +78,10 @@
     </ul>
   </section>
   <!-- END: slider  -->
+  <Section class="map">
+    <div id="map"></div>
+
+  </Section>
   <section class="probootstrap-section">
     <div class="container">
       <div class="row">
@@ -213,7 +224,7 @@
       <div class="row mb60">
         <div class="col-md-3">
           <div class="probootstrap-footer-widget">
-            <h4 class="heading">About Our Farm</h4>
+            <h4 class="heading">About Our Project</h4>
             <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
             <p><a href="#">Read more...</a></p>
           </div> 
@@ -223,7 +234,7 @@
             <h4 class="heading">Quick Links</h4>
             <ul class="stack-link">
               <li><a href="#">Organic Fruits</a></li>
-              <li><a href="#">Organic Vegeables</a></li>
+              <li><a href="#">Organic Vegetables</a></li>
               <li><a href="#">Non-GMO Products</a></li>
               <li><a href="#">Locally Grown Products</a></li>
             </ul>
