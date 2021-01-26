@@ -1962,3 +1962,7 @@ a.hover-reverse:hover, a.hover-reverse:focus, a.hover-reverse:active {
   outline: none;
   background: rgba(0, 0, 0, 0.9);
 }
+
+#map {
+  height: auto;
+}
