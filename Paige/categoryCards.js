@@ -55,12 +55,12 @@ async function getMeat(){
     return body; 
 }; 
 
-async function getProduce(){
+function getProduce(){
     let requestOptions = {
         method: "GET",
         headers : { "Content-Type": "application/json"} 
     }
-
+    console.log("button was clicked"); 
     const response = await fetch("/producer/produce", requestOptions); 
 
     //traverses the response object and pulls out the body content in the form of JSON 
