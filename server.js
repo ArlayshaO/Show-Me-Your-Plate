@@ -42,5 +42,5 @@ var server = app.listen(port, function(){
 //api call to get map
 app.get("/api/tpk/maps", function(req,res) { 
     /* error checking probably */ 
-    res.send(process.env.MAPS_API_KEY); 
+    res.send({data:process.env.MAPS_API_KEY}); 
 }); 
