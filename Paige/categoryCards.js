@@ -204,26 +204,26 @@ async function getCsa(){
     return body; 
 }; 
 
-document.getElementById('meat').addEventListener("click", function(event){
-    getMeat()}); 
+//document.getElementById('meat').addEventListener("click", function(event){
+  //  getMeat()}); 
 
     document.getElementById('produce').addEventListener("click", function(event){
         getProduce()}); 
 
-    document.getElementById('dairy').addEventListener("click", function(event){
-        getDairy()}); 
+    // document.getElementById('dairy').addEventListener("click", function(event){
+    //     getDairy()}); 
 
-    document.getElementById('eggs').addEventListener("click", function(event){
-        getEggs()}); 
+    // document.getElementById('eggs').addEventListener("click", function(event){
+    //     getEggs()}); 
 
-    document.getElementById('herbs').addEventListener("click", function(event){
-        getHerbs()}); 
+    // document.getElementById('herbs').addEventListener("click", function(event){
+    //     getHerbs()}); 
 
-    document.getElementById('honey').addEventListener("click", function(event){
-        getHoney()}); 
+    // document.getElementById('honey').addEventListener("click", function(event){
+    //     getHoney()}); 
 
-    document.getElementById('mushrooms').addEventListener("click", function(event){
-        getMushrooms()}); 
+    // document.getElementById('mushrooms').addEventListener("click", function(event){
+    //     getMushrooms()}); 
 
-    document.getElementById('speciality').addEventListener("click", function(event){
-        getSpeciality()}); 
+    // document.getElementById('speciality').addEventListener("click", function(event){
+    //     getSpeciality()}); 
