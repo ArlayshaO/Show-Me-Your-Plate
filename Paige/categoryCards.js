@@ -90,7 +90,7 @@ async function getHerbs(){
         method: "GET",
         headers : { "Content-Type": "application/json"} 
     }
-
+    console.log("testing for clicks")
     const response = await fetch("/producer/herbs", requestOptions); 
 
     //traverses the response object and pulls out the body content in the form of JSON 
@@ -210,14 +210,14 @@ async function getCsa(){
     document.getElementById('produce').addEventListener("click", function(event){
         getProduce()}); 
 
-    // document.getElementById('dairy').addEventListener("click", function(event){
-    //     getDairy()}); 
+     document.getElementById('dairy').addEventListener("click", function(event){
+        getDairy()}); 
 
-    // document.getElementById('eggs').addEventListener("click", function(event){
-    //     getEggs()}); 
+     document.getElementById('eggs').addEventListener("click", function(event){
+        getEggs()}); 
 
-    // document.getElementById('herbs').addEventListener("click", function(event){
-    //     getHerbs()}); 
+     document.getElementById('herbs').addEventListener("click", function(event){
+        getHerbs()}); 
 
     // document.getElementById('honey').addEventListener("click", function(event){
     //     getHoney()}); 
@@ -225,5 +225,5 @@ async function getCsa(){
     // document.getElementById('mushrooms').addEventListener("click", function(event){
     //     getMushrooms()}); 
 
-    // document.getElementById('speciality').addEventListener("click", function(event){
-    //     getSpeciality()}); 
+     document.getElementById('speciality').addEventListener("click", function(event){
+         getSpeciality()}); 
