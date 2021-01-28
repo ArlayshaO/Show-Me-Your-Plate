@@ -40,13 +40,157 @@ var server = app.listen(port, function(){
 app.get('/producers', function(request, response){
     /*get data*/ 
     console.log(request.query); 
-    // Producer.find(function(err, items){
-    //         if (err) return console.error(err);
-    //         response.statusCode = 200; 
-    //         response.send(items); 
-    // })    
+    Producer.find(function(err, items){
+            if (err) return console.error(err);
+            response.statusCode = 200; 
+            response.send(items); 
+    })    
 }); 
-        
+      
+app.get('/producers/meat', function(request, response){
+    /*get data*/ 
+    console.log(request.query); 
+    Producer.find(function(err, items){
+            if (err) return console.error(err);
+            response.statusCode = 200; 
+            response.send(items); 
+    })    
+}); 
+
+app.get('/producers/produce', function(request, response){
+    /*get data*/ 
+    console.log(request.query); 
+    Producer.find(function(err, items){
+            if (err) return console.error(err);
+            response.statusCode = 200; 
+            response.send(items); 
+    })    
+}); 
+
+app.get('/producers/dairy', function(request, response){
+    /*get data*/ 
+    console.log(request.query); 
+    Producer.find(function(err, items){
+            if (err) return console.error(err);
+            response.statusCode = 200; 
+            response.send(items); 
+    })    
+}); 
+
+app.get('/producers/eggs', function(request, response){
+    /*get data*/ 
+    console.log(request.query); 
+    Producer.find(function(err, items){
+            if (err) return console.error(err);
+            response.statusCode = 200; 
+            response.send(items); 
+    })    
+}); 
+
+app.get('/producers/herbs', function(request, response){
+    /*get data*/ 
+    console.log(request.query); 
+    Producer.find(function(err, items){
+            if (err) return console.error(err);
+            response.statusCode = 200; 
+            response.send(items); 
+    })    
+}); 
+
+app.get('/producers/mushrooms', function(request, response){
+    /*get data*/ 
+    console.log(request.query); 
+    Producer.find(function(err, items){
+            if (err) return console.error(err);
+            response.statusCode = 200; 
+            response.send(items); 
+    })    
+}); 
+
+app.get('/producers/honey', function(request, response){
+    /*get data*/ 
+    console.log(request.query); 
+    Producer.find(function(err, items){
+            if (err) return console.error(err);
+            response.statusCode = 200; 
+            response.send(items); 
+    })    
+}); 
+
+app.get('/producers/speciality', function(request, response){
+    /*get data*/ 
+    console.log(request.query); 
+    Producer.find(function(err, items){
+            if (err) return console.error(err);
+            response.statusCode = 200; 
+            response.send(items); 
+    })    
+}); 
+
+app.get('/producers/delivery', function(request, response){
+    /*get data*/ 
+    console.log(request.query); 
+    Producer.find(function(err, items){
+            if (err) return console.error(err);
+            response.statusCode = 200; 
+            response.send(items); 
+    })    
+}); 
+
+app.get('/producers/orderOnline', function(request, response){
+    /*get data*/ 
+    console.log(request.query); 
+    Producer.find(function(err, items){
+            if (err) return console.error(err);
+            response.statusCode = 200; 
+            response.send(items); 
+    })    
+}); 
+
+app.get('/producers/csa', function(request, response){
+    /*get data*/ 
+    console.log(request.query); 
+    Producer.find(function(err, items){
+            if (err) return console.error(err);
+            response.statusCode = 200; 
+            response.send(items); 
+    })    
+}); 
+
+app.get('/markets', function(request, response){
+    /*get data*/ 
+    console.log(request.query); 
+    Producer.find(function(err, items){
+            if (err) return console.error(err);
+            response.statusCode = 200; 
+            response.send(items); 
+    })    
+}); 
+
+app.get('/resources', function(request, response){
+    /*get data*/ 
+    console.log(request.query); 
+    Producer.find(function(err, items){
+            if (err) return console.error(err);
+            response.statusCode = 200; 
+            response.send(items); 
+    })    
+}); 
+
+app.get('/services', function(request, response){
+    /*get data*/ 
+    console.log(request.query); 
+    Producer.find(function(err, items){
+            if (err) return console.error(err);
+            response.statusCode = 200; 
+            response.send(items); 
+    })    
+}); 
+
+
+
+
+
 // //app.get('/producers/:prodcutType, function(request, response){
 //     //do what we want on the server side
 //    Producer.findById(request.params.productType, function(err, item){
