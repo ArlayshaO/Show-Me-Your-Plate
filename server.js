@@ -1,16 +1,17 @@
 const mongoose = require('mongoose');
-var Resource = require('./models/resource.js'); 
-var resourceItem = require('./models/resourceItem.js'); 
+//var Resource = require('./models/resource.js'); 
+//var resourceItem = require('./models/resourceItem.js'); 
 //Load in the express module
 const express = require('express');  
 const path = require('path');
+require('dotenv').config();
 
 //creates a new express application 
 const app = express(); 
 //declare the port we want to connect to 
 const port = 3000; 
-
-const mongoDB = ''; 
+//instead of string-mongo connection string
+const mongoDB = process.env.MONGO_STRING; 
 mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true}, (err, client) => {
     if(err) return console.error(err);
     console.log('Connected to database'); 
@@ -38,3 +39,8 @@ app.use(express.urlencoded({ extended:false }));
 var server = app.listen(port, function(){
     console.log("The server is running at port " + port); 
 });
+//api call to get map
+app.get("/api/tpk/maps", function(req,res) { 
+    /* error checking probably */ 
+    res.send({data:process.env.MAPS_API_KEY}); 
+}); 
