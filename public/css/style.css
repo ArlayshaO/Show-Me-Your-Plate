@@ -545,6 +545,7 @@ a.hover-reverse:hover, a.hover-reverse:focus, a.hover-reverse:active {
 
 .probootstrap-section.probootstrap-section-sm {
   padding: 3em 0;
+
 }
 
 .probootstrap-section.probootstrap-border-top {
@@ -1189,6 +1190,7 @@ a.hover-reverse:hover, a.hover-reverse:focus, a.hover-reverse:active {
 .probootstrap-animate {
   opacity: 0;
   visibility: hidden;
+  
 }
 
 .probootstrap-contact-info, .with-icon {
