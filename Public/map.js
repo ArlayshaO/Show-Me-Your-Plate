@@ -6,6 +6,7 @@
      center: { lat: 39.099724, lng: -94.578331 },
      zoom: 10,
      mapTypeId: 'hybrid'
+     mapID: '1d670811fb0d41cc'
    });
   }
    
