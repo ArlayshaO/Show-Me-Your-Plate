@@ -13,26 +13,4 @@ db.on('error', console.error.bind(console, 'MongoDB connection error: '));
 
 //SCHEMA here 
 
-    name : String, 
-    productType : [String],
-    products : [String], 
-    productLocation : String, 
-    zipCode : String, 
-    phoneNumber : String, 
-    email : String, 
-
-    facebook : String, 
-    link : String, 
-
-    notes : String, 
-    openingYear : String, 
-
-    directOrderOnline : Boolean, 
-    csaOrSubs : Boolean, 
-    farmerMarket : Boolean, 
-    farmerMarketNames : [String], 
-    upick : Boolean, 
-    wholesale : Boolean, 
-    linkToWholesale : String, 
-    kcDelivery : Boolean, 
-    sellOnFarm : Boolean, 
+   
