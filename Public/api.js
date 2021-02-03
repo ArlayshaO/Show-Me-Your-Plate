@@ -10,8 +10,8 @@ async function loadMapsScript(){
   }); 
   let body = await response.json()
   console.log (body)
-  //combine our API KEY with googles string to set the source attribute of the script tag correctly
-script.src = "https://maps.googleapis.com/maps/api/js?key=" + body.data + "&callback=initMap&libraries=&v=weekly";
+  //combine our API KEY with googles string to set the source attribute of the script tag correctly//added map id to string before callback
+script.src = "https://maps.googleapis.com/maps/api/js?key=" + body.data + "&map_ids=1d670811fb0d41cc&callback=initMap&libraries=&v=weekly";
 script.defer = true;
 script.onload = initMap;
 script.async = true;
