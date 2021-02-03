@@ -28,14 +28,14 @@ const producersSchema = new mongoose.Schema ({
             "link": String,
             "openingYear": String,
             "directOrderOnline": Boolean,
-            "csaOrSubscript": String,
-            "farmerMarket": String,
+            "csaOrSubscript": Boolean,
+            "farmerMarket": Boolean,
             "farmerMarketNames": String,
-            "uPick": String,
-            "wholesale": String,
+            "uPick": Boolean,
+            "wholesale": Boolean,
             "linkToWholesale": String, 
-            "kcDelivery": String,
-            "sellOnFarm": String,
+            "kcDelivery": Boolean,
+            "sellOnFarm": Boolean,
             "notes": String,
         }
 )
@@ -51,6 +51,28 @@ if(producerData.producers[i].longitude == "FALSE" || producerData.producers[i].l
     producerData.producers[i].longitude = 0; 
     producerData.producers[i].latitude = 0; 
 };     
+if(producerData.producers[i].directOrderOnline == "TRUE"){
+    producerData.producers[i].directOrderOnline = true; 
+}; 
+if(producerData.producers[i].csaOrSubscript == "TRUE"){
+    producerData.producers[i].csaOrSubscript = true; 
+}; 
+if(producerData.producers[i].farmerMarket == "TRUE"){
+    producerData.producers[i].farmerMarket = true; 
+}; 
+if(producerData.producers[i].uPick == "TRUE"){
+    producerData.producers[i].uPick = true; 
+}; 
+if(producerData.producers[i].wholesale == "TRUE"){
+    producerData.producers[i].wholesale = true; 
+}; 
+if(producerData.producers[i].kcDelivery == "TRUE"){
+    producerData.producers[i].kcDelivery = true; 
+}; 
+if(producerData.producers[i].sellOnFarm == "TRUE"){
+    producerData.producers[i].sellOnFarm = true; 
+}; 
+
 let tmp = new producersModel(producerData.producers[i]); 
 tmp.save(function(err, producer){
     if(err){
