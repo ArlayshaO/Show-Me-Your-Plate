@@ -11,9 +11,6 @@ db.on('error', console.error.bind(console, 'MongoDB connection error: '));
 
 //need DB connection string 
 
-<<<<<<< Updated upstream
-//SCHEMA here 
-=======
 let fileStr = fs.readFileSync("producers.json", 'utf8'); 
 let producerData = JSON.parse(fileStr); 
 //console.log(producerData); 
@@ -88,6 +85,5 @@ tmp.save(function(err, producer){
    
 }); 
 }
->>>>>>> Stashed changes
 
    
