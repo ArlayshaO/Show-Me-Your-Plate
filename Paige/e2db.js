@@ -11,6 +11,83 @@ db.on('error', console.error.bind(console, 'MongoDB connection error: '));
 
 //need DB connection string 
 
+<<<<<<< Updated upstream
 //SCHEMA here 
+=======
+let fileStr = fs.readFileSync("producers.json", 'utf8'); 
+let producerData = JSON.parse(fileStr); 
+//console.log(producerData); 
+console.log(typeof(producerData)); 
+for(let i=0; i<producerData.producers.length; i++){
+if(producerData.producers[i].longitude == "FALSE" || producerData.producers[i].latitude == "FALSE"){
+    producerData.producers[i].longitude = 0; 
+    producerData.producers[i].latitude = 0; 
+};     
+//strings to booleans 
+//direct order online: 
+if(producerData.producers[i].directOrderOnline == "TRUE"){
+    producerData.producers[i].directOrderOnline = true; 
+}
+else if (producerData.producers[i].directOrderOnline == "FALSE"){
+    producerData.producers[i].directOrderOnline = false;
+}; 
+
+//csa: 
+if(producerData.producers[i].csaOrSubscript == "TRUE"){
+    producerData.producers[i].csaOrSubscript = true; 
+} 
+else if (producerData.producers[i].csaOrSubscript == "FALSE"){
+    producerData.producers[i].csaOrSubscript = false;
+};
+    
+//farmers market: 
+if(producerData.producers[i].farmerMarket == "TRUE"){
+    producerData.producers[i].farmerMarket = true; 
+}
+else if (producerData.producers[i].farmerMarket == "FALSE"){
+    producerData.producers[i].farmerMarket = false;
+};
+
+//uPick: 
+if(producerData.producers[i].uPick == "TRUE"){
+    producerData.producers[i].uPick = true; 
+}
+else if (producerData.producers[i].uPick == "FALSE"){
+    producerData.producers[i].uPick = false;
+}; 
+
+//wholesale: 
+if(producerData.producers[i].wholesale == "TRUE"){
+    producerData.producers[i].wholesale = true; 
+}
+else if (producerData.producers[i].uPick == "FALSE"){
+    producerData.producers[i].uPick = false;
+}; 
+
+//delivery: 
+if(producerData.producers[i].kcDelivery == "TRUE"){
+    producerData.producers[i].kcDelivery = true; 
+}
+else if(producerData.producers[i].kcDelivery == "FALSE"){
+    producerData.producers[i].kcDelivery = false;
+}; 
+
+//sell on farm: 
+if(producerData.producers[i].sellOnFarm == "TRUE"){
+    producerData.producers[i].sellOnFarm = true; 
+}
+else if(producerData.producers[i].sellOnFarm == "FALSE"){
+    producerData.producers[i].sellOnFarm = false;
+}; 
+
+let tmp = new producersModel(producerData.producers[i]); 
+tmp.save(function(err, producer){
+    if(err){
+        console.log(err);
+    }
+   
+}); 
+}
+>>>>>>> Stashed changes
 
    
