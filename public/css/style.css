@@ -1978,3 +1978,9 @@ a.hover-reverse:hover, a.hover-reverse:focus, a.hover-reverse:active {
 
 
 }
+.contact {
+  padding: 20px;
+  height:500px;
+  width:auto;
+  align-items: center;
+}
