@@ -57,141 +57,150 @@ app.get('/producers', function(request, response){
       
 app.get('/producers/meat', function(request, response){
     /*get data*/ 
+
     console.log(request.query); 
-    Producer.find(function(err, items){
+    Producers.find({ mainProductType : "Meat"}, function(err, meat){
             if (err) return console.error(err);
             response.statusCode = 200; 
-            response.send(items); 
+            response.send(meat); 
     })    
 }); 
 
 app.get('/producers/produce', function(request, response){
     /*get data*/ 
+   
     console.log(request.query); 
-    Producer.find(function(err, items){
+    Producers.find({ mainProductType : "Produce"}, function(err, produce){
             if (err) return console.error(err);
             response.statusCode = 200; 
-            response.send(items); 
+            response.send(produce); 
     })    
 }); 
 
 app.get('/producers/dairy', function(request, response){
     /*get data*/ 
+     
     console.log(request.query); 
-    Producer.find(function(err, items){
+    Producer.find({ mainProductType : "Dairy"}, function(err, dairy){
             if (err) return console.error(err);
             response.statusCode = 200; 
-            response.send(items); 
+            response.send(dairy); 
     })    
 }); 
 
 app.get('/producers/eggs', function(request, response){
     /*get data*/ 
+
     console.log(request.query); 
-    Producer.find(function(err, items){
+    Producer.find({ mainProductType : "Eggs"}, function(err, eggs){
             if (err) return console.error(err);
             response.statusCode = 200; 
-            response.send(items); 
+            response.send(eggs); 
     })    
 }); 
 
 app.get('/producers/herbs', function(request, response){
     /*get data*/ 
+      
     console.log(request.query); 
-    Producer.find(function(err, items){
+    Producer.find({ mainProductType : "Herbs"}, function(err, herbs){
             if (err) return console.error(err);
             response.statusCode = 200; 
-            response.send(items); 
+            response.send(herbs); 
     })    
 }); 
 
 app.get('/producers/mushrooms', function(request, response){
     /*get data*/ 
+  
     console.log(request.query); 
-    Producer.find(function(err, items){
+    Producer.find({ mainProductType : "Mushrooms"}, function(err, mushrooms){
             if (err) return console.error(err);
             response.statusCode = 200; 
-            response.send(items); 
+            response.send(mushrooms); 
     })    
 }); 
 
 app.get('/producers/honey', function(request, response){
     /*get data*/ 
+      
     console.log(request.query); 
-    Producer.find(function(err, items){
+    Producer.find({ mainProductType : "Honey"}, function(err, honey){
             if (err) return console.error(err);
             response.statusCode = 200; 
-            response.send(items); 
+            response.send(honey); 
     })    
 }); 
 
 app.get('/producers/speciality', function(request, response){
     /*get data*/ 
+   
     console.log(request.query); 
-    Producer.find(function(err, items){
+    Producer.find({ mainProductType : "Speciality"}, function(err, speciality){
             if (err) return console.error(err);
             response.statusCode = 200; 
-            response.send(items); 
+            response.send(speciality); 
     })    
 }); 
 
 app.get('/producers/delivery', function(request, response){
     /*get data*/ 
+
     console.log(request.query); 
-    Producer.find(function(err, items){
+    Producer.find({ "kcDelivery": true,}, function(err, delivery){
             if (err) return console.error(err);
             response.statusCode = 200; 
-            response.send(items); 
+            response.send(delivery); 
     })    
 }); 
 
 app.get('/producers/orderOnline', function(request, response){
     /*get data*/ 
     console.log(request.query); 
-    Producer.find(function(err, items){
+    Producer.find({ "directOrderOnline": true,}, function(err, orderOnline){
             if (err) return console.error(err);
             response.statusCode = 200; 
-            response.send(items); 
+            response.send(orderOnline); 
     })    
 }); 
 
 app.get('/producers/csa', function(request, response){
     /*get data*/ 
     console.log(request.query); 
-    Producer.find(function(err, items){
+    Producer.find({ "csaOrSubscript": true,}, function(err, csa){
             if (err) return console.error(err);
             response.statusCode = 200; 
-            response.send(items); 
+            response.send(csa); 
     })    
 }); 
 
 app.get('/markets', function(request, response){
     /*get data*/ 
     console.log(request.query); 
-    Producer.find(function(err, items){
+    Producer.find({ "": true,}, function(err, market){
             if (err) return console.error(err);
             response.statusCode = 200; 
-            response.send(items); 
+            response.send(market); 
     })    
 }); 
 
 app.get('/resources', function(request, response){
     /*get data*/ 
     console.log(request.query); 
-    Producer.find(function(err, items){
+    Producer.find({ "": true,}, function(err, resource){
             if (err) return console.error(err);
             response.statusCode = 200; 
-            response.send(items); 
+            response.send(resource); 
     })    
 }); 
 
 app.get('/services', function(request, response){
     /*get data*/ 
     console.log(request.query); 
-    Producer.find(function(err, items){
+    Producer.find({ mainProductType : "Service"}, function(err, service){
             if (err) return console.error(err);
             response.statusCode = 200; 
-            response.send(items); 
+            response.send(service); 
     })    
 }); 
 

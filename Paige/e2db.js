@@ -1,7 +1,7 @@
 const mongoose = require('mongoose'); 
 const fs = require('fs'); 
 
-const mongoDB = "mongodb+srv://Capstone:Farmer123@cluster0.8xd2d.mongodb.net/capstone?retryWrites=true&w=majority"; 
+const mongoDB = process.env.CONNECTION; 
 console.log(mongoDB); 
 
 mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true}, (err, client) => {
@@ -16,6 +16,7 @@ db.on("error", console.error.bind(console, "MongoDB connection error: "));
 const producersSchema = new mongoose.Schema ({
 
             "name": String,
+            "mainProductType": String, 
             "productType": String,
             "products": String,
             "zipCode": String,
@@ -43,17 +44,25 @@ const producersSchema = new mongoose.Schema ({
 
 producersModel = mongoose.model("producers", producersSchema);
 
+
+//SCHEMA here 
+
+let fileStr = fs.readFileSync("producersFinal.json", 'utf8'); 
+
 //SCHEMA here 
 let fileStr = fs.readFileSync("producers.json", 'utf8'); 
 let producerData = JSON.parse(fileStr); 
 //console.log(producerData); 
-console.log(typeof(producerData)); 
+//console.log(typeof(producerData)); 
 for(let i=0; i<producerData.producers.length; i++){
 if(producerData.producers[i].longitude == "FALSE" || producerData.producers[i].latitude == "FALSE"){
     producerData.producers[i].longitude = 0; 
     producerData.producers[i].latitude = 0; 
 };     
+
+
 //strings to booleans 
+
 //direct order online: 
 if(producerData.producers[i].directOrderOnline == "TRUE"){
     producerData.producers[i].directOrderOnline = true; 
@@ -90,8 +99,8 @@ else if (producerData.producers[i].uPick == "FALSE"){
 if(producerData.producers[i].wholesale == "TRUE"){
     producerData.producers[i].wholesale = true; 
 }
-else if (producerData.producers[i].uPick == "FALSE"){
-    producerData.producers[i].uPick = false;
+else if (producerData.producers[i].wholesale == "FALSE"){
+    producerData.producers[i].wholesale = false;
 }; 
 
 //delivery: 
@@ -108,6 +117,7 @@ if(producerData.producers[i].sellOnFarm == "TRUE"){
 }
 else if(producerData.producers[i].sellOnFarm == "FALSE"){
     producerData.producers[i].sellOnFarm = false;
+
 }; 
 
 let tmp = new producersModel(producerData.producers[i]); 
@@ -118,4 +128,5 @@ tmp.save(function(err, producer){
    
 }); 
 }
+
 
