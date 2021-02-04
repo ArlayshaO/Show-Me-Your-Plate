@@ -1,16 +1,49 @@
 const mongoose = require('mongoose'); 
+const fs = require('fs'); 
 
-const mongoDB = process.env.MONGO_STRING; 
+const mongoDB = "mongodb+srv://Capstone:Farmer123@cluster0.8xd2d.mongodb.net/capstone?retryWrites=true&w=majority"; 
+console.log(mongoDB); 
+
 mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true}, (err, client) => {
     if(err) return console.error(err);
     console.log('Connected to database'); 
 }); 
+
 const db = mongoose.connection;
 //open a connection to the database 
-db.on('error', console.error.bind(console, 'MongoDB connection error: '));
+db.on("error", console.error.bind(console, "MongoDB connection error: "));
+//SCHEMA here 
+const producersSchema = new mongoose.Schema ({
 
-//need DB connection string 
+            "name": String,
+            "productType": String,
+            "products": String,
+            "zipCode": String,
+            "productLocation": String,
+            "latitude": Number, 
+            "longitude": Number, 
+            "phoneNumber": String,
+            "email": String,
+            "facebook": String,
+            "link": String,
+            "openingYear": String,
+            "directOrderOnline": Boolean,
+            "csaOrSubscript": Boolean,
+            "farmerMarket": Boolean,
+            "farmerMarketNames": String,
+            "uPick": Boolean,
+            "wholesale": Boolean,
+            "linkToWholesale": String, 
+            "kcDelivery": Boolean,
+            "sellOnFarm": Boolean,
+            "notes": String,
+        }
+)
 
+
+producersModel = mongoose.model("producers", producersSchema);
+
+//SCHEMA here 
 let fileStr = fs.readFileSync("producers.json", 'utf8'); 
 let producerData = JSON.parse(fileStr); 
 //console.log(producerData); 
@@ -86,4 +119,3 @@ tmp.save(function(err, producer){
 }); 
 }
 
-   
