@@ -43,9 +43,7 @@ const producersSchema = new mongoose.Schema ({
 
 producersModel = mongoose.model("producers", producersSchema);
 
-
 //SCHEMA here 
-
 let fileStr = fs.readFileSync("producers.json", 'utf8'); 
 let producerData = JSON.parse(fileStr); 
 //console.log(producerData); 
