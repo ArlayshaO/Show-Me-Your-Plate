@@ -39,8 +39,8 @@ async function getProduce(){
         headers : { "Content-Type": "application/json"} 
     }
     console.log("button was clicked"); 
-    const response = await fetch("/producer/produce", requestOptions); 
-
+    const response = await fetch("/producers/produce", requestOptions); 
+    console.log(response); 
     //traverses the response object and pulls out the body content in the form of JSON 
     const body = await response.json(); 
     if (response.status != 200){
@@ -56,7 +56,7 @@ async function getDairy(){
         headers : { "Content-Type": "application/json"} 
     }
     console.log("dairy button clicked")
-    const response = await fetch("/producer/dairy", requestOptions); 
+    const response = await fetch("/producers/dairy", requestOptions); 
 
     //traverses the response object and pulls out the body content in the form of JSON 
     const body = await response.json(); 
@@ -74,7 +74,7 @@ async function getEggs(){
         headers : { "Content-Type": "application/json"} 
     }
 
-    const response = await fetch("/producer/eggs", requestOptions); 
+    const response = await fetch("/producers/eggs", requestOptions); 
 
     //traverses the response object and pulls out the body content in the form of JSON 
     const body = await response.json(); 
@@ -91,7 +91,7 @@ async function getHerbs(){
         headers : { "Content-Type": "application/json"} 
     }
     console.log("testing for clicks")
-    const response = await fetch("/producer/herbs", requestOptions); 
+    const response = await fetch("/producers/herbs", requestOptions); 
 
     //traverses the response object and pulls out the body content in the form of JSON 
     const body = await response.json(); 
@@ -108,7 +108,7 @@ async function getHoney(){
         headers : { "Content-Type": "application/json"} 
     }
 
-    const response = await fetch("/producer/honey", requestOptions); 
+    const response = await fetch("/producers/honey", requestOptions); 
 
     //traverses the response object and pulls out the body content in the form of JSON 
     const body = await response.json(); 
@@ -125,7 +125,7 @@ async function getMushrooms(){
         headers : { "Content-Type": "application/json"} 
     }
 
-    const response = await fetch("/producer/mushrooms", requestOptions); 
+    const response = await fetch("/producers/mushrooms", requestOptions); 
 
     //traverses the response object and pulls out the body content in the form of JSON 
     const body = await response.json(); 
@@ -142,7 +142,7 @@ async function getSpeciality(){
         headers : { "Content-Type": "application/json"} 
     }
 
-    const response = await fetch("/producer/speciality", requestOptions); 
+    const response = await fetch("/producers/speciality", requestOptions); 
 
     //traverses the response object and pulls out the body content in the form of JSON 
     const body = await response.json(); 
@@ -159,7 +159,7 @@ async function getDelivery(){
         headers : { "Content-Type": "application/json"} 
     }
 
-    const response = await fetch("/producer/delivery", requestOptions); 
+    const response = await fetch("/producers/delivery", requestOptions); 
 
     //traverses the response object and pulls out the body content in the form of JSON 
     const body = await response.json(); 
