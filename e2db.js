@@ -1,7 +1,12 @@
 const mongoose = require('mongoose'); 
 const fs = require('fs'); 
 
+
+const mongoDB = "mongodb+srv://Capstone:Farmer123@cluster0.8xd2d.mongodb.net/capstone?retryWrites=true&w=majority"; 
+
+
 const mongoDB = process.env.CONNECTION; 
+
 console.log(mongoDB); 
 
 mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true}, (err, client) => {
@@ -48,9 +53,14 @@ producersModel = mongoose.model("producers", producersSchema);
 //SCHEMA here 
 
 let fileStr = fs.readFileSync("producersFinal.json", 'utf8'); 
+fileStr = fileStr.replace(/^\uFEFF/,'');
+
+
+let fileStr = fs.readFileSync("producersFinal.json", 'utf8'); 
 
 //SCHEMA here 
 let fileStr = fs.readFileSync("producers.json", 'utf8'); 
+
 let producerData = JSON.parse(fileStr); 
 //console.log(producerData); 
 //console.log(typeof(producerData)); 
@@ -61,7 +71,11 @@ if(producerData.producers[i].longitude == "FALSE" || producerData.producers[i].l
 };     
 
 
+
+//STRINGS TO BOOLEANS  
+
 //strings to booleans 
+
 
 //direct order online: 
 if(producerData.producers[i].directOrderOnline == "TRUE"){
