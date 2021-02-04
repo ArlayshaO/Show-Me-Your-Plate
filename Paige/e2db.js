@@ -48,6 +48,9 @@ producersModel = mongoose.model("producers", producersSchema);
 //SCHEMA here 
 
 let fileStr = fs.readFileSync("producersFinal.json", 'utf8'); 
+
+//SCHEMA here 
+let fileStr = fs.readFileSync("producers.json", 'utf8'); 
 let producerData = JSON.parse(fileStr); 
 //console.log(producerData); 
 //console.log(typeof(producerData)); 
@@ -56,6 +59,9 @@ if(producerData.producers[i].longitude == "FALSE" || producerData.producers[i].l
     producerData.producers[i].longitude = 0; 
     producerData.producers[i].latitude = 0; 
 };     
+
+
+//strings to booleans 
 
 //direct order online: 
 if(producerData.producers[i].directOrderOnline == "TRUE"){
