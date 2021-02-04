@@ -1,7 +1,7 @@
 const mongoose = require('mongoose'); 
 const fs = require('fs'); 
 
-const mongoDB = "mongodb+srv://Capstone:Farmer123@cluster0.8xd2d.mongodb.net/capstone?retryWrites=true&w=majority"; 
+const mongoDB = process.env.CONNECTION; 
 console.log(mongoDB); 
 
 mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true}, (err, client) => {
@@ -50,7 +50,7 @@ producersModel = mongoose.model("producers", producersSchema);
 let fileStr = fs.readFileSync("producersFinal.json", 'utf8'); 
 let producerData = JSON.parse(fileStr); 
 //console.log(producerData); 
-console.log(typeof(producerData)); 
+//console.log(typeof(producerData)); 
 for(let i=0; i<producerData.producers.length; i++){
 if(producerData.producers[i].longitude == "FALSE" || producerData.producers[i].latitude == "FALSE"){
     producerData.producers[i].longitude = 0; 
