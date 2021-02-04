@@ -57,6 +57,15 @@ app.get('/producers', function(request, response){
       
 app.get('/producers/meat', function(request, response){
     /*get data*/ 
+                    //variable for parsed object
+    /*for(let i=0; i<producerData.producers.length; i++){
+        
+        //variable for parsed object.producers[i]
+        producerData.producers[i].mainProductType == "Meat"
+        
+        //variable for parsed object
+        producerData.producers[i].productType.includes("Meat"); 
+    }*/
     console.log(request.query); 
     Producer.find(function(err, items){
             if (err) return console.error(err);
@@ -67,6 +76,15 @@ app.get('/producers/meat', function(request, response){
 
 app.get('/producers/produce', function(request, response){
     /*get data*/ 
+                      //variable for parsed object
+    /*for(let i=0; i<producerData.producers.length; i++){
+        
+        //variable for parsed object.producers[i]
+        producerData.producers[i].mainProductType == "Produce"
+        
+        //variable for parsed object
+        producerData.producers[i].productType.includes("Produce"); 
+    }*/
     console.log(request.query); 
     Producer.find(function(err, items){
             if (err) return console.error(err);
@@ -77,6 +95,15 @@ app.get('/producers/produce', function(request, response){
 
 app.get('/producers/dairy', function(request, response){
     /*get data*/ 
+                      //variable for parsed object
+    /*for(let i=0; i<producerData.producers.length; i++){
+        
+        //variable for parsed object.producers[i]
+        producerData.producers[i].mainProductType == "Dairy"
+        
+        //variable for parsed object
+        producerData.producers[i].productType.includes("Dairy"); 
+    }*/
     console.log(request.query); 
     Producer.find(function(err, items){
             if (err) return console.error(err);
@@ -87,6 +114,15 @@ app.get('/producers/dairy', function(request, response){
 
 app.get('/producers/eggs', function(request, response){
     /*get data*/ 
+                      //variable for parsed object
+    /*for(let i=0; i<producerData.producers.length; i++){
+        
+        //variable for parsed object.producers[i]
+        producerData.producers[i].mainProductType == "Eggs"
+        
+        //variable for parsed object
+        producerData.producers[i].productType.includes("Eggs"); 
+    }*/
     console.log(request.query); 
     Producer.find(function(err, items){
             if (err) return console.error(err);
@@ -97,6 +133,15 @@ app.get('/producers/eggs', function(request, response){
 
 app.get('/producers/herbs', function(request, response){
     /*get data*/ 
+                      //variable for parsed object
+    /*for(let i=0; i<producerData.producers.length; i++){
+        
+        //variable for parsed object.producers[i]
+        producerData.producers[i].mainProductType == "Herbs"
+        
+        //variable for parsed object
+        producerData.producers[i].productType.includes("Herbs"); 
+    }*/
     console.log(request.query); 
     Producer.find(function(err, items){
             if (err) return console.error(err);
@@ -107,6 +152,15 @@ app.get('/producers/herbs', function(request, response){
 
 app.get('/producers/mushrooms', function(request, response){
     /*get data*/ 
+                      //variable for parsed object
+    /*for(let i=0; i<producerData.producers.length; i++){
+        
+        //variable for parsed object.producers[i]
+        producerData.producers[i].mainProductType == "Mushrooms"
+        
+        //variable for parsed object
+        producerData.producers[i].productType.includes("Mushrooms"); 
+    }*/
     console.log(request.query); 
     Producer.find(function(err, items){
             if (err) return console.error(err);
@@ -117,6 +171,15 @@ app.get('/producers/mushrooms', function(request, response){
 
 app.get('/producers/honey', function(request, response){
     /*get data*/ 
+                      //variable for parsed object
+    /*for(let i=0; i<producerData.producers.length; i++){
+        
+        //variable for parsed object.producers[i]
+        producerData.producers[i].mainProductType == "Honey"
+        
+        //variable for parsed object
+        producerData.producers[i].productType.includes("Honey"); 
+    }*/
     console.log(request.query); 
     Producer.find(function(err, items){
             if (err) return console.error(err);
@@ -127,6 +190,15 @@ app.get('/producers/honey', function(request, response){
 
 app.get('/producers/speciality', function(request, response){
     /*get data*/ 
+                      //variable for parsed object
+    /*for(let i=0; i<producerData.producers.length; i++){
+        
+        //variable for parsed object.producers[i]
+        producerData.producers[i].mainProductType == "Speciality"
+        
+        //variable for parsed object
+        producerData.producers[i].productType.includes("Speciality"); 
+    }*/
     console.log(request.query); 
     Producer.find(function(err, items){
             if (err) return console.error(err);
@@ -137,6 +209,13 @@ app.get('/producers/speciality', function(request, response){
 
 app.get('/producers/delivery', function(request, response){
     /*get data*/ 
+    
+    /*for(let i=0; i<producerData.producers.length; i++){
+        //if(producersData.producers.delivery[i] == true){
+            code block saves array of all delivery TRUEs to display at endpoint 
+        }
+    }*/
+
     console.log(request.query); 
     Producer.find(function(err, items){
             if (err) return console.error(err);

@@ -16,6 +16,7 @@ db.on("error", console.error.bind(console, "MongoDB connection error: "));
 const producersSchema = new mongoose.Schema ({
 
             "name": String,
+            "mainProductType": String, 
             "productType": String,
             "products": String,
             "zipCode": String,
@@ -40,15 +41,13 @@ const producersSchema = new mongoose.Schema ({
         }
 )
 
-<<<<<<< HEAD
+
 producersModel = mongoose.model("producers", producersSchema);
 
-=======
-<<<<<<< Updated upstream
+
 //SCHEMA here 
-=======
->>>>>>> main
-let fileStr = fs.readFileSync("producers.json", 'utf8'); 
+
+let fileStr = fs.readFileSync("producersFinal.json", 'utf8'); 
 let producerData = JSON.parse(fileStr); 
 //console.log(producerData); 
 console.log(typeof(producerData)); 
@@ -57,29 +56,7 @@ if(producerData.producers[i].longitude == "FALSE" || producerData.producers[i].l
     producerData.producers[i].longitude = 0; 
     producerData.producers[i].latitude = 0; 
 };     
-<<<<<<< HEAD
-if(producerData.producers[i].directOrderOnline == "TRUE"){
-    producerData.producers[i].directOrderOnline = true; 
-}; 
-if(producerData.producers[i].csaOrSubscript == "TRUE"){
-    producerData.producers[i].csaOrSubscript = true; 
-}; 
-if(producerData.producers[i].farmerMarket == "TRUE"){
-    producerData.producers[i].farmerMarket = true; 
-}; 
-if(producerData.producers[i].uPick == "TRUE"){
-    producerData.producers[i].uPick = true; 
-}; 
-if(producerData.producers[i].wholesale == "TRUE"){
-    producerData.producers[i].wholesale = true; 
-}; 
-if(producerData.producers[i].kcDelivery == "TRUE"){
-    producerData.producers[i].kcDelivery = true; 
-}; 
-if(producerData.producers[i].sellOnFarm == "TRUE"){
-    producerData.producers[i].sellOnFarm = true; 
-=======
-//strings to booleans 
+
 //direct order online: 
 if(producerData.producers[i].directOrderOnline == "TRUE"){
     producerData.producers[i].directOrderOnline = true; 
@@ -116,8 +93,8 @@ else if (producerData.producers[i].uPick == "FALSE"){
 if(producerData.producers[i].wholesale == "TRUE"){
     producerData.producers[i].wholesale = true; 
 }
-else if (producerData.producers[i].uPick == "FALSE"){
-    producerData.producers[i].uPick = false;
+else if (producerData.producers[i].wholesale == "FALSE"){
+    producerData.producers[i].wholesale = false;
 }; 
 
 //delivery: 
@@ -134,7 +111,7 @@ if(producerData.producers[i].sellOnFarm == "TRUE"){
 }
 else if(producerData.producers[i].sellOnFarm == "FALSE"){
     producerData.producers[i].sellOnFarm = false;
->>>>>>> main
+
 }; 
 
 let tmp = new producersModel(producerData.producers[i]); 
@@ -145,8 +122,5 @@ tmp.save(function(err, producer){
    
 }); 
 }
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
->>>>>>> main
+
 
