@@ -25,7 +25,7 @@ function initMap() {
        mapID: '1d670811fb0d41cc'
      });
     }
-     
+ /*
     // Create a <script> tag and set the USGS URL as the source.
   const script = document.createElement("script");
   // This example uses a local copy of the GeoJSON stored at
@@ -47,3 +47,5 @@ const eqfeed_callback = function (results) {
     });
   }
 };
+
+*/

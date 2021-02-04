@@ -205,3 +205,4 @@ app.get('/services', function(request, response){
 }); 
 
 module.exports = server; 
+//added to invoke env on every file
