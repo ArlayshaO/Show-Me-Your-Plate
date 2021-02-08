@@ -20,9 +20,10 @@
     <!--Google API code-->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <script
-      src="api.js"
-    
+      src="api.js" 
+
     ></script>
+    <script src="produce.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css" />
    
     <script src="categoryCards.js"></script>
@@ -65,15 +66,19 @@
     </div>
   </header>
   <!-- END: header -->
-  <section class="map">
+  <section class="map-section">
     <div id="map"></div>
 
   </section>
 
 <div class="container">
   <section>
-    
-
+<!---place info here (onPageLoad here)-->
+<body onload="getProduce()">
+<!-- TABLE TO DISPLAY mainProductType matches-->
+<table id="table_id"> 
+  
+</table>
   </section>
 </div>
 

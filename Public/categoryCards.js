@@ -33,7 +33,7 @@ async function getMeat(){
     return body; 
 }; 
 
-async function getProduce(){
+async function produceRequest(){
     let requestOptions = {
         method: "GET",
         headers : { "Content-Type": "application/json"} 

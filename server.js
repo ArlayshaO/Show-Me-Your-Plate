@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+var Producers = require('./Public/producerPRAC.js'); 
 //var Resource = require('./models/resource.js'); 
 //var resourceItem = require('./models/resourceItem.js'); 
 //Load in the express module
@@ -11,7 +12,7 @@ const app = express();
 //declare the port we want to connect to 
 const port = 3000; 
 //instead of string-mongo connection string
-const mongoDB = process.env.MONGO_STRING; 
+const mongoDB = process.env.CONNECTION; 
 mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true}, (err, client) => {
     if(err) return console.error(err);
     console.log('Connected to database'); 
@@ -48,7 +49,7 @@ app.get("/api/tpk/maps", function(req,res) {
 app.get('/producers', function(request, response){
     /*get data*/ 
     console.log(request.query); 
-    Producer.find(function(err, items){
+    Producers.find(function(err, items){
             if (err) return console.error(err);
             response.statusCode = 200; 
             response.send(items); 
@@ -75,13 +76,14 @@ app.get('/producers/produce', function(request, response){
             response.statusCode = 200; 
             response.send(produce); 
     })    
+    
 }); 
 
 app.get('/producers/dairy', function(request, response){
     /*get data*/ 
      
     console.log(request.query); 
-    Producer.find({ mainProductType : "Dairy"}, function(err, dairy){
+    Producers.find({ mainProductType : "Dairy"}, function(err, dairy){
             if (err) return console.error(err);
             response.statusCode = 200; 
             response.send(dairy); 
@@ -92,7 +94,7 @@ app.get('/producers/eggs', function(request, response){
     /*get data*/ 
 
     console.log(request.query); 
-    Producer.find({ mainProductType : "Eggs"}, function(err, eggs){
+    Producers.find({ mainProductType : "Eggs"}, function(err, eggs){
             if (err) return console.error(err);
             response.statusCode = 200; 
             response.send(eggs); 
@@ -103,7 +105,7 @@ app.get('/producers/herbs', function(request, response){
     /*get data*/ 
       
     console.log(request.query); 
-    Producer.find({ mainProductType : "Herbs"}, function(err, herbs){
+    Producers.find({ mainProductType : "Herbs"}, function(err, herbs){
             if (err) return console.error(err);
             response.statusCode = 200; 
             response.send(herbs); 
@@ -114,7 +116,7 @@ app.get('/producers/mushrooms', function(request, response){
     /*get data*/ 
   
     console.log(request.query); 
-    Producer.find({ mainProductType : "Mushrooms"}, function(err, mushrooms){
+    Producers.find({ mainProductType : "Mushrooms"}, function(err, mushrooms){
             if (err) return console.error(err);
             response.statusCode = 200; 
             response.send(mushrooms); 
@@ -125,7 +127,7 @@ app.get('/producers/honey', function(request, response){
     /*get data*/ 
       
     console.log(request.query); 
-    Producer.find({ mainProductType : "Honey"}, function(err, honey){
+    Producers.find({ mainProductType : "Honey"}, function(err, honey){
             if (err) return console.error(err);
             response.statusCode = 200; 
             response.send(honey); 
@@ -136,7 +138,7 @@ app.get('/producers/specialty', function(request, response){
     /*get data*/ 
    
     console.log(request.query); 
-    Producer.find({ mainProductType : "Specialty"}, function(err, specialty){
+    Producers.find({ mainProductType : "Speciality"}, function(err, speciality){
             if (err) return console.error(err);
             response.statusCode = 200; 
             response.send(specialty); 
@@ -147,7 +149,7 @@ app.get('/producers/delivery', function(request, response){
     /*get data*/ 
 
     console.log(request.query); 
-    Producer.find({ "kcDelivery": true,}, function(err, delivery){
+    Producers.find({ "kcDelivery": true,}, function(err, delivery){
             if (err) return console.error(err);
             response.statusCode = 200; 
             response.send(delivery); 
@@ -157,7 +159,7 @@ app.get('/producers/delivery', function(request, response){
 app.get('/producers/orderOnline', function(request, response){
     /*get data*/ 
     console.log(request.query); 
-    Producer.find({ "directOrderOnline": true,}, function(err, orderOnline){
+    Producers.find({ "directOrderOnline": true,}, function(err, orderOnline){
             if (err) return console.error(err);
             response.statusCode = 200; 
             response.send(orderOnline); 
@@ -167,7 +169,7 @@ app.get('/producers/orderOnline', function(request, response){
 app.get('/producers/csa', function(request, response){
     /*get data*/ 
     console.log(request.query); 
-    Producer.find({ "csaOrSubscript": true,}, function(err, csa){
+    Producers.find({ "csaOrSubscript": true,}, function(err, csa){
             if (err) return console.error(err);
             response.statusCode = 200; 
             response.send(csa); 
@@ -177,7 +179,7 @@ app.get('/producers/csa', function(request, response){
 app.get('/markets', function(request, response){
     /*get data*/ 
     console.log(request.query); 
-    Producer.find({ "": true,}, function(err, market){
+    Producers.find({ "": true,}, function(err, market){
             if (err) return console.error(err);
             response.statusCode = 200; 
             response.send(market); 
@@ -187,7 +189,7 @@ app.get('/markets', function(request, response){
 app.get('/resources', function(request, response){
     /*get data*/ 
     console.log(request.query); 
-    Producer.find({ "": true,}, function(err, resource){
+    Producers.find({ "": true,}, function(err, resource){
             if (err) return console.error(err);
             response.statusCode = 200; 
             response.send(resource); 
@@ -197,7 +199,7 @@ app.get('/resources', function(request, response){
 app.get('/services', function(request, response){
     /*get data*/ 
     console.log(request.query); 
-    Producer.find({ mainProductType : "Service"}, function(err, service){
+    Producers.find({ mainProductType : "Service"}, function(err, service){
             if (err) return console.error(err);
             response.statusCode = 200; 
             response.send(service); 
