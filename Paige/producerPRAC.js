@@ -6,38 +6,31 @@ const Schema = mongoose.Schema;
 
 //create schema for PRODUCERS (WHO) on map  
 const producerSchema = new Schema({
-    //properties to FILTER SEARCH W/
-    name : String, 
-    //WILL DISPLAY BY TYPE 
-    productType : [String],
-    
-    products : [String], 
-
-    productLocation : String, 
-    zipCode : String, 
-
-    phoneNumber : String, 
-    email : String, 
-
-    facebook : String, 
-    link : String, 
-
-    notes : String, 
-    openingYear : String, 
-
-    //WILL DISPLAY BY SERVICE if true 
-    directOrderOnline : Boolean, 
-    csaOrSubs : Boolean, 
-    farmerMarket : Boolean, 
-    farmerMarketNames : [String], 
-    upick : Boolean, 
-    wholesale : Boolean, 
-    linkToWholesale : String, 
-    kcDelivery : Boolean, 
-    sellOnFarm : Boolean, 
-   
+    name: String,
+    mainProductType: String, 
+    productType: String,
+    products: String,
+    zipCode: String,
+    productLocation: String,
+    latitude: Number, 
+    longitude: Number, 
+    phoneNumber: String,
+    email: String,
+    facebook: String,
+    link: String,
+    openingYear: String,
+    directOrderOnline: Boolean,
+    csaOrSubscript: Boolean,
+    farmerMarket: Boolean,
+    farmerMarketNames: String,
+    uPick: Boolean,
+    wholesale: Boolean,
+    linkToWholesale: String, 
+    kcDelivery: Boolean,
+    sellOnFarm: Boolean,
+    notes: String,
 })
 
-module.exports = mongoose.model("producer", producerSchema);
+module.exports = mongoose.model("producers", producerSchema);
 
 
