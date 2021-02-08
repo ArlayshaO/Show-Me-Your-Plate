@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+var producers = require('./Public/producerPRAC.js'); 
 //var Resource = require('./models/resource.js'); 
 //var resourceItem = require('./models/resourceItem.js'); 
 //Load in the express module
@@ -11,7 +12,7 @@ const app = express();
 //declare the port we want to connect to 
 const port = 3000; 
 //instead of string-mongo connection string
-const mongoDB = process.env.MONGO_STRING; 
+const mongoDB = process.env.CONNECTION; 
 mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true}, (err, client) => {
     if(err) return console.error(err);
     console.log('Connected to database'); 
@@ -48,7 +49,7 @@ app.get("/api/tpk/maps", function(req,res) {
 app.get('/producers', function(request, response){
     /*get data*/ 
     console.log(request.query); 
-    Producer.find(function(err, items){
+    producers.find(function(err, items){
             if (err) return console.error(err);
             response.statusCode = 200; 
             response.send(items); 
@@ -59,7 +60,7 @@ app.get('/producers/meat', function(request, response){
     /*get data*/ 
 
     console.log(request.query); 
-    Producers.find({ mainProductType : "Meat"}, function(err, meat){
+    producers.find({ mainProductType : "Meat"}, function(err, meat){
             if (err) return console.error(err);
             response.statusCode = 200; 
             response.send(meat); 
@@ -70,18 +71,19 @@ app.get('/producers/produce', function(request, response){
     /*get data*/ 
    
     console.log(request.query); 
-    Producers.find({ mainProductType : "Produce"}, function(err, produce){
+    producers.find({ mainProductType : "Produce"}, function(err, produce){
             if (err) return console.error(err);
             response.statusCode = 200; 
             response.send(produce); 
     })    
+    
 }); 
 
 app.get('/producers/dairy', function(request, response){
     /*get data*/ 
      
     console.log(request.query); 
-    Producer.find({ mainProductType : "Dairy"}, function(err, dairy){
+    producers.find({ mainProductType : "Dairy"}, function(err, dairy){
             if (err) return console.error(err);
             response.statusCode = 200; 
             response.send(dairy); 
@@ -92,7 +94,7 @@ app.get('/producers/eggs', function(request, response){
     /*get data*/ 
 
     console.log(request.query); 
-    Producer.find({ mainProductType : "Eggs"}, function(err, eggs){
+    producers.find({ mainProductType : "Eggs"}, function(err, eggs){
             if (err) return console.error(err);
             response.statusCode = 200; 
             response.send(eggs); 
@@ -103,7 +105,7 @@ app.get('/producers/herbs', function(request, response){
     /*get data*/ 
       
     console.log(request.query); 
-    Producer.find({ mainProductType : "Herbs"}, function(err, herbs){
+    producers.find({ mainProductType : "Herbs"}, function(err, herbs){
             if (err) return console.error(err);
             response.statusCode = 200; 
             response.send(herbs); 
@@ -114,7 +116,7 @@ app.get('/producers/mushrooms', function(request, response){
     /*get data*/ 
   
     console.log(request.query); 
-    Producer.find({ mainProductType : "Mushrooms"}, function(err, mushrooms){
+    producers.find({ mainProductType : "Mushrooms"}, function(err, mushrooms){
             if (err) return console.error(err);
             response.statusCode = 200; 
             response.send(mushrooms); 
@@ -125,7 +127,7 @@ app.get('/producers/honey', function(request, response){
     /*get data*/ 
       
     console.log(request.query); 
-    Producer.find({ mainProductType : "Honey"}, function(err, honey){
+    producers.find({ mainProductType : "Honey"}, function(err, honey){
             if (err) return console.error(err);
             response.statusCode = 200; 
             response.send(honey); 
@@ -136,7 +138,7 @@ app.get('/producers/speciality', function(request, response){
     /*get data*/ 
    
     console.log(request.query); 
-    Producer.find({ mainProductType : "Speciality"}, function(err, speciality){
+    producers.find({ mainProductType : "Speciality"}, function(err, speciality){
             if (err) return console.error(err);
             response.statusCode = 200; 
             response.send(speciality); 
@@ -147,7 +149,7 @@ app.get('/producers/delivery', function(request, response){
     /*get data*/ 
 
     console.log(request.query); 
-    Producer.find({ "kcDelivery": true,}, function(err, delivery){
+    producers.find({ "kcDelivery": true,}, function(err, delivery){
             if (err) return console.error(err);
             response.statusCode = 200; 
             response.send(delivery); 
@@ -157,7 +159,7 @@ app.get('/producers/delivery', function(request, response){
 app.get('/producers/orderOnline', function(request, response){
     /*get data*/ 
     console.log(request.query); 
-    Producer.find({ "directOrderOnline": true,}, function(err, orderOnline){
+    producers.find({ "directOrderOnline": true,}, function(err, orderOnline){
             if (err) return console.error(err);
             response.statusCode = 200; 
             response.send(orderOnline); 
@@ -167,7 +169,7 @@ app.get('/producers/orderOnline', function(request, response){
 app.get('/producers/csa', function(request, response){
     /*get data*/ 
     console.log(request.query); 
-    Producer.find({ "csaOrSubscript": true,}, function(err, csa){
+    producers.find({ "csaOrSubscript": true,}, function(err, csa){
             if (err) return console.error(err);
             response.statusCode = 200; 
             response.send(csa); 
@@ -177,7 +179,7 @@ app.get('/producers/csa', function(request, response){
 app.get('/markets', function(request, response){
     /*get data*/ 
     console.log(request.query); 
-    Producer.find({ "": true,}, function(err, market){
+    producers.find({ "": true,}, function(err, market){
             if (err) return console.error(err);
             response.statusCode = 200; 
             response.send(market); 
@@ -187,7 +189,7 @@ app.get('/markets', function(request, response){
 app.get('/resources', function(request, response){
     /*get data*/ 
     console.log(request.query); 
-    Producer.find({ "": true,}, function(err, resource){
+    producers.find({ "": true,}, function(err, resource){
             if (err) return console.error(err);
             response.statusCode = 200; 
             response.send(resource); 
@@ -197,7 +199,7 @@ app.get('/resources', function(request, response){
 app.get('/services', function(request, response){
     /*get data*/ 
     console.log(request.query); 
-    Producer.find({ mainProductType : "Service"}, function(err, service){
+    producers.find({ mainProductType : "Service"}, function(err, service){
             if (err) return console.error(err);
             response.statusCode = 200; 
             response.send(service); 

@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;  
 
 //create schema for PRODUCERS (WHO) on map  
-const producerSchema = new Schema({
+const Producers = new Schema({
     name: String,
     mainProductType: String, 
     productType: String,
@@ -31,6 +31,6 @@ const producerSchema = new Schema({
     notes: String,
 })
 
-module.exports = mongoose.model("producers", producerSchema);
+module.exports = mongoose.model("producers", Producers);
 
 
