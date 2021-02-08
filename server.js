@@ -132,14 +132,14 @@ app.get('/producers/honey', function(request, response){
     })    
 }); 
 
-app.get('/producers/speciality', function(request, response){
+app.get('/producers/specialty', function(request, response){
     /*get data*/ 
    
     console.log(request.query); 
-    Producer.find({ mainProductType : "Speciality"}, function(err, speciality){
+    Producer.find({ mainProductType : "Specialty"}, function(err, specialty){
             if (err) return console.error(err);
             response.statusCode = 200; 
-            response.send(speciality); 
+            response.send(specialty); 
     })    
 }); 
 
