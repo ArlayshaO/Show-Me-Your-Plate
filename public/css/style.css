@@ -867,7 +867,7 @@ a.hover-reverse:hover, a.hover-reverse:focus, a.hover-reverse:active {
   float: left;
   width: 100%;
 }
-
+/*
 #map {
   width: 100%;
   height: 500px;
@@ -878,7 +878,7 @@ a.hover-reverse:hover, a.hover-reverse:focus, a.hover-reverse:active {
   #map {
     height: 200px;
   }
-}
+}*/
 
 .probootstrap-cart a {
   position: relative;
@@ -1970,8 +1970,8 @@ a.hover-reverse:hover, a.hover-reverse:focus, a.hover-reverse:active {
 
 }
 
-.map {
-  padding: 20px;
+.map-section {
+  padding: 50px;
   height:500px;
   width:auto;
   margin:auto;
