@@ -1,9 +1,9 @@
-document.addEventListener("load", function(event){getProduce()}); 
+document.addEventListener("load", function(event){getMeat()}); 
 
-function getProduce(){
+function getMeat(){
     //produceRequest() returns body 
     //also tried fetch('/producers/produce).then
-    produceRequest().then(function(body){
+    meatRequest().then(function(body){
         console.log(body); 
             let tr = '';
             let tableBody = document.querySelector('#table_id');
@@ -32,13 +32,13 @@ function getProduce(){
     }); 
 }
 
-async function produceRequest(){
+async function meatRequest(){
     let requestOptions = {
         method: "GET",
         headers : { "Content-Type": "application/json"} 
     }
     console.log("button was clicked"); 
-    const response = await fetch("/producers/produce", requestOptions); 
+    const response = await fetch("/producers/meat", requestOptions); 
     console.log(response); 
     //traverses the response object and pulls out the body content in the form of JSON 
     const body = await response.json(); 
