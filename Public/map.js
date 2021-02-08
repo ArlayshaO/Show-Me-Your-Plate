@@ -10,4 +10,20 @@
    });
   }
    
-  function clickButton()
+  /*
+  async function getMeat(){
+    let requestOptions = {
+        method: "GET",
+        headers : { "Content-Type": "application/json"} 
+    }
+
+    const response = await fetch("/producer/meat", requestOptions); 
+
+    //traverses the response object and pulls out the body content in the form of JSON 
+    const body = await response.json(); 
+    if (response.status != 200){
+       throw Error(body.message); 
+    }
+
+    return body; 
+}; */
