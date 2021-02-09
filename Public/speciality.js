@@ -1,9 +1,9 @@
-document.addEventListener("load", function(event){getSpeciality()}); 
+document.addEventListener("load", function(event){getSpecialty()}); 
 
-function getSpeciality(){
+function getSpecialty(){
     //produceRequest() returns body 
     //also tried fetch('/producers/produce).then
-    produceRequest().then(function(body){
+    specialtyRequest().then(function(body){
         console.log(body); 
             let tr = '';
             let tableBody = document.querySelector('#table_id');
@@ -32,13 +32,13 @@ function getSpeciality(){
     }); 
 }
 
-async function specialityRequest(){
+async function specialtyRequest(){
     let requestOptions = {
         method: "GET",
         headers : { "Content-Type": "application/json"} 
     }
     console.log("button was clicked"); 
-    const response = await fetch("/producers/speciality", requestOptions); 
+    const response = await fetch("/producers/specialty", requestOptions); 
     console.log(response); 
     //traverses the response object and pulls out the body content in the form of JSON 
     const body = await response.json(); 
