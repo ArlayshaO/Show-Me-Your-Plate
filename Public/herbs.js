@@ -3,7 +3,7 @@ document.addEventListener("load", function(event){getHerbs()});
 function getHerbs(){
     //produceRequest() returns body 
     //also tried fetch('/producers/produce).then
-    produceRequest().then(function(body){
+    herbsRequest().then(function(body){
         console.log(body); 
             let tr = '';
             let tableBody = document.querySelector('#table_id');
