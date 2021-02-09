@@ -1,6 +1,6 @@
-document.addEventListener("load", function(event){getDairy()}); 
+document.addEventListener("load", function(event){getMushrooms()}); 
 
-function getDairy(){
+function getMushrooms(){
     //produceRequest() returns body 
     //also tried fetch('/producers/produce).then
     produceRequest().then(function(body){
@@ -32,13 +32,13 @@ function getDairy(){
     }); 
 }
 
-async function dairyRequest(){
+async function mushroomsRequest(){
     let requestOptions = {
         method: "GET",
         headers : { "Content-Type": "application/json"} 
     }
     console.log("button was clicked"); 
-    const response = await fetch("/producers/dairy", requestOptions); 
+    const response = await fetch("/producers/mushrooms", requestOptions); 
     console.log(response); 
     //traverses the response object and pulls out the body content in the form of JSON 
     const body = await response.json(); 
