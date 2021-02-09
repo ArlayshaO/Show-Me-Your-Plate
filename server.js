@@ -12,6 +12,7 @@ const app = express();
 //declare the port we want to connect to 
 const port = 3000; 
 //instead of string-mongo connection string
+console.log(process.env.CONNECTION); 
 const mongoDB = process.env.CONNECTION; 
 mongoose.connect(mongoDB, {useNewUrlParser: true,useUnifiedTopology: true}, (err, client) => {
     if(err) return console.error(err);
