@@ -17,6 +17,7 @@ function getProduce(){
 
                 //list code 
                 //let div = document.createElement('div');
+                //styling for all divs created here
                 let div = document.createElement ('div')
                
                 div.style.borderStyle ="inset";
