@@ -21,8 +21,11 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <script
       src="api.js"
-    
+
     ></script>
+ <!--category script-->
+ <script src="testextrapage.js"></script>
+
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     
   </head>
@@ -61,18 +64,21 @@
     </div>
   </header>
   <!-- END: header -->
-  <section class="map">
+  <section class="map-section">
     <div id="map"></div>
 
   </section>
 
 <div class="container">
   <section>
-<!---place info here-->
-
+<!---place info here (onPageLoad here)-->
+<body onload="getProduce()">
+<!-- TABLE TO DISPLAY mainProductType matches-->
+<div id="results"> 
+  
+</div>
   </section>
 </div>
-
   
   </body>
   <div class="gototop js-top">
