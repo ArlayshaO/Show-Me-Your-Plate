@@ -17,6 +17,14 @@ function getProduce(){
 
                 //list code 
                 //let div = document.createElement('div');
+                let div = document.createElement ('div')
+                div.style.border ="groove";
+                div.style.backgroundColor = "white";
+              
+               // div.style="nth-child(even) background-color: #000000;"
+             
+                divBody.append(div);
+
                 let h2 = document.createElement('h2');
                 h2.style.color = "Green"; 
                 h2.innerHTML = value.name;
@@ -24,22 +32,28 @@ function getProduce(){
 
                 let a = document.createElement('a');
                 a.innerHTML = value.link;
-                a.style.color = "grey"; 
+                a.style.color = "blue"; 
                 a.style.width = "800px";
                  divBody.appendChild(a)
 
                 let p = document.createElement('p');
                 p.innerHTML = value.email;
-                p.style.color = "grey"; 
+                p.style.color = "black"; 
                 p.style.width = "800px";
                  divBody.appendChild(p)
-
-                 p = document.createElement('p');
-                p.innerHTML = value.productLocation;
-            p.style.color = "grey"; 
+              
+                 p.innerHTML = value.productLocation;
+            p.style.color = "black"; 
                p.style.width = "800px";
                 //div.appendChild(tr);
                 divBody.appendChild(p)
+
+                let p1 = document.createElement('p1');
+                p1.innerHTML = value.notes;
+                p1.style.color = "black"; 
+                   p1.style.width = "800px";
+                    //div.appendChild(tr);
+                    divBody.appendChild(p1)
             });
       
     }).catch(function(error){
