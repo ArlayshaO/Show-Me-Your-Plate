@@ -5,26 +5,59 @@ function getMushrooms(){
     //also tried fetch('/producers/produce).then
     mushroomsRequest().then(function(body){
         console.log(body); 
-            let tr = '';
-            let tableBody = document.querySelector('#table_id');
-            body.forEach(function(value) {
-                //map code 
-                new google.maps.Marker({
-                    position: {  lat: value.latitude, lng: value.longitude},
-                    map,
-                    title: value.name
-                })
+        let div = '';
+        let divBody = document.querySelector('#results');
+        body.forEach(function(value) {
+            //map code 
+            new google.maps.Marker({
+                position: {  lat: value.latitude, lng: value.longitude},
+                map,
+                title: value.name
+            })
 
-                //list code 
-                //let div = document.createElement('div');
-                let tr = document.createElement('tr');
-                tr.innerHTML = value.name;
-                tableBody.appendChild(tr);
-                tr = document.createElement('tr');
-                tr.innerHTML = value.email;
-                tr.style.color = "red"; 
+            //list code 
+            //let div = document.createElement('div');
+            let div = document.createElement ('div')
+           
+            div.style.borderStyle ="inset";
+            div.style.borderColor ="black";
+            div.style.borderTopColor ="white";
+          
+            div.style.borderWidth ="3px";
+        
+           // div.style="nth-child(even) background-color: #000000;"
+         
+            divBody.append(div);
+
+            let h2 = document.createElement('h2');
+            h2.style.color = "Green"; 
+            h2.innerHTML = value.name;
+            h2.style.marginLeft ="15px";
+            divBody.appendChild(h2);
+
+            let a = document.createElement('a');
+            a.style.color = "blue"; 
+            a.innerHTML = value.link;
+            a.style.width = "800px";
+            a.style.marginLeft ="15px";
+             divBody.appendChild(a)
+
+             let address = document.createElement('address'); 
+             address.style.color = "black"; 
+             address.innerHTML = value.productLocation;
+             address.style.width = "800px";
+             address.style.marginLeft ="15px";
+            //div.appendChild(tr);
+            divBody.appendChild(address)
+
+            let notes = document.createElement('notes');
+            notes.innerHTML = value.notes;
+            notes.style.color = "black"; 
+            notes.style.width = "800px";
+            notes.style.marginLeft ="15px";
+            notes.style.marginBottom ="15px";
                 //div.appendChild(tr);
-                tableBody.append(tr)
+                divBody.appendChild(notes)
             });
       
     }).catch(function(error){

@@ -18,7 +18,7 @@ function getProduce(){
                 //list code 
                 //let div = document.createElement('div');
                 let div = document.createElement ('div')
-                div.style.width = "auto";
+               
                 div.style.borderStyle ="inset";
                 div.style.borderColor ="black";
                 div.style.borderTopColor ="white";
@@ -36,37 +36,28 @@ function getProduce(){
                 divBody.appendChild(h2);
 
                 let a = document.createElement('a');
-                a.innerHTML = value.link;
                 a.style.color = "blue"; 
+                a.innerHTML = value.link;
                 a.style.width = "800px";
                 a.style.marginLeft ="15px";
                  divBody.appendChild(a)
 
-                let p = document.createElement('p');
-                p.innerHTML = value.email;
-                p.style.color = "black"; 
-                p.style.width = "800px";
-                p.style.margin ="15px";
-                 divBody.appendChild(p)
-
-                 let p1 = document.createElement('p1'); 
-              
-                 p1.innerHTML = value.productLocation;
-            p1.style.color = "black"; 
-               p1.style.width = "800px";
-               p1.style.marginLeft ="15px";
+                 let address = document.createElement('address'); 
+                 address.style.color = "black"; 
+                 address.innerHTML = value.productLocation;
+                 address.style.width = "800px";
+                 address.style.marginLeft ="15px";
                 //div.appendChild(tr);
-                divBody.appendChild(p1)
+                divBody.appendChild(address)
 
-                let p2 = document.createElement('p2');
-                p2.innerHTML = value.notes;
-                p2.style.color = "black"; 
-                   p2.style.width = "900px";
-                   p2.style.marginLeft ="15px";
-                   p2.style.marginBottom ="15px";
-              
+                let notes = document.createElement('notes');
+                notes.innerHTML = value.notes;
+                notes.style.color = "black"; 
+                notes.style.width = "800px";
+                notes.style.marginLeft ="15px";
+                notes.style.marginBottom ="15px";
                     //div.appendChild(tr);
-                    divBody.appendChild(p2)
+                    divBody.appendChild(notes)
             });
       
     }).catch(function(error){

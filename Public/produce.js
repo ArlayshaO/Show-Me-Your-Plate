@@ -5,41 +5,59 @@ function getProduce(){
     //also tried fetch('/producers/produce).then
     produceRequest().then(function(body){
         console.log(body); 
-            let div = '';
-            let divBody = document.querySelector('#results');
-            body.forEach(function(value) {
-                //map code 
-                new google.maps.Marker({
-                    position: {  lat: value.latitude, lng: value.longitude},
-                    map,
-                    title: value.name
-                })
+        let div = '';
+        let divBody = document.querySelector('#results');
+        body.forEach(function(value) {
+            //map code 
+            new google.maps.Marker({
+                position: {  lat: value.latitude, lng: value.longitude},
+                map,
+                title: value.name
+            })
 
-                //list code 
-                //let div = document.createElement('div');
-                let h2 = document.createElement('h2');
-                h2.style.color = "Green"; 
-                h2.innerHTML = value.name;
-                divBody.appendChild(h2);
+            //list code 
+            //let div = document.createElement('div');
+            let div = document.createElement ('div')
+           
+            div.style.borderStyle ="inset";
+            div.style.borderColor ="black";
+            div.style.borderTopColor ="white";
+          
+            div.style.borderWidth ="3px";
+        
+           // div.style="nth-child(even) background-color: #000000;"
+         
+            divBody.append(div);
 
-                let a = document.createElement('a');
-                a.innerHTML = value.link;
-                a.style.color = "grey"; 
-                a.style.width = "800px";
-                 divBody.appendChild(a)
+            let h2 = document.createElement('h2');
+            h2.style.color = "Green"; 
+            h2.innerHTML = value.name;
+            h2.style.marginLeft ="15px";
+            divBody.appendChild(h2);
 
-                let p = document.createElement('p');
-                p.innerHTML = value.email;
-                p.style.color = "grey"; 
-                p.style.width = "800px";
-                 divBody.appendChild(p)
+            let a = document.createElement('a');
+            a.style.color = "blue"; 
+            a.innerHTML = value.link;
+            a.style.width = "800px";
+            a.style.marginLeft ="15px";
+             divBody.appendChild(a)
 
-                 p = document.createElement('p');
-                p.innerHTML = value.productLocation;
-            p.style.color = "grey"; 
-               p.style.width = "800px";
+             let address = document.createElement('address'); 
+             address.style.color = "black"; 
+             address.innerHTML = value.productLocation;
+             address.style.width = "800px";
+             address.style.marginLeft ="15px";
+            //div.appendChild(tr);
+            divBody.appendChild(address)
+
+            let notes = document.createElement('notes');
+            notes.innerHTML = value.notes;
+            notes.style.color = "black"; 
+            notes.style.width = "800px";
+            notes.style.marginLeft ="15px";
+            notes.style.marginBottom ="15px";
                 //div.appendChild(tr);
-                divBody.appendChild(p)
+                divBody.appendChild(notes)
             });
       
     }).catch(function(error){
