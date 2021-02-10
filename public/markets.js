@@ -1,9 +1,9 @@
-document.addEventListener("load", function(event){getSpecialty()}); 
+document.addEventListener("load", function(event){getMarkets()}); 
 
-function getSpecialty(){
+function getMarkets(){
     //produceRequest() returns body 
     //also tried fetch('/producers/produce).then
-    specialtyRequest().then(function(body){
+    marketsRequest().then(function(body){
         console.log(body); 
         let div = '';
         let divBody = document.querySelector('#results');
@@ -65,13 +65,13 @@ function getSpecialty(){
     }); 
 }
 
-async function specialtyRequest(){
+async function marketRequest(){
     let requestOptions = {
         method: "GET",
         headers : { "Content-Type": "application/json"} 
     }
     console.log("button was clicked"); 
-    const response = await fetch("/producers/specialty", requestOptions); 
+    const response = await fetch("/producers/markets", requestOptions); 
     console.log(response); 
     //traverses the response object and pulls out the body content in the form of JSON 
     const body = await response.json(); 
