@@ -18,10 +18,13 @@ function getProduce(){
                 //list code 
                 //let div = document.createElement('div');
                 let div = document.createElement ('div')
-                div.style.borderBottom ="groove";
-                div.style.borderColor ="white"
+                div.style.width = "auto";
+                div.style.borderStyle ="inset";
+                div.style.borderColor ="black";
+                div.style.borderTopColor ="white";
               
-                
+                div.style.borderWidth ="3px";
+            
                // div.style="nth-child(even) background-color: #000000;"
              
                 divBody.append(div);
@@ -45,22 +48,25 @@ function getProduce(){
                 p.style.width = "800px";
                 p.style.margin ="15px";
                  divBody.appendChild(p)
-              
-                 p.innerHTML = value.productLocation;
-            p.style.color = "black"; 
-               p.style.width = "800px";
-               p.style.marginLeft ="15px";
-                //div.appendChild(tr);
-                divBody.appendChild(p)
 
-                let p1 = document.createElement('p1');
-                p1.innerHTML = value.notes;
-                p1.style.color = "black"; 
-                   p1.style.width = "800px";
-                   p1.style.marginLeft ="15px";
+                 let p1 = document.createElement('p1'); 
+              
+                 p1.innerHTML = value.productLocation;
+            p1.style.color = "black"; 
+               p1.style.width = "800px";
+               p1.style.marginLeft ="15px";
+                //div.appendChild(tr);
+                divBody.appendChild(p1)
+
+                let p2 = document.createElement('p2');
+                p2.innerHTML = value.notes;
+                p2.style.color = "black"; 
+                   p2.style.width = "900px";
+                   p2.style.marginLeft ="15px";
+                   p2.style.marginBottom ="15px";
               
                     //div.appendChild(tr);
-                    divBody.appendChild(p1)
+                    divBody.appendChild(p2)
             });
       
     }).catch(function(error){
