@@ -18,9 +18,10 @@ function getProduce(){
                 //list code 
                 //let div = document.createElement('div');
                 let div = document.createElement ('div')
-                div.style.border ="groove";
-                div.style.backgroundColor = "white";
+                div.style.borderBottom ="groove";
+                div.style.borderColor ="white"
               
+                
                // div.style="nth-child(even) background-color: #000000;"
              
                 divBody.append(div);
@@ -28,23 +29,27 @@ function getProduce(){
                 let h2 = document.createElement('h2');
                 h2.style.color = "Green"; 
                 h2.innerHTML = value.name;
+                h2.style.marginLeft ="15px";
                 divBody.appendChild(h2);
 
                 let a = document.createElement('a');
                 a.innerHTML = value.link;
                 a.style.color = "blue"; 
                 a.style.width = "800px";
+                a.style.marginLeft ="15px";
                  divBody.appendChild(a)
 
                 let p = document.createElement('p');
                 p.innerHTML = value.email;
                 p.style.color = "black"; 
                 p.style.width = "800px";
+                p.style.margin ="15px";
                  divBody.appendChild(p)
               
                  p.innerHTML = value.productLocation;
             p.style.color = "black"; 
                p.style.width = "800px";
+               p.style.marginLeft ="15px";
                 //div.appendChild(tr);
                 divBody.appendChild(p)
 
@@ -52,6 +57,8 @@ function getProduce(){
                 p1.innerHTML = value.notes;
                 p1.style.color = "black"; 
                    p1.style.width = "800px";
+                   p1.style.marginLeft ="15px";
+              
                     //div.appendChild(tr);
                     divBody.appendChild(p1)
             });
