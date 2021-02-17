@@ -1,11 +1,12 @@
 const mongoose = require('mongoose'); 
 const fs = require('fs'); 
+require('dotenv').config();
 
 
-const mongoDB = "mongodb+srv://Capstone:Farmer123@cluster0.8xd2d.mongodb.net/capstone?retryWrites=true&w=majority"; 
+//const mongoDB = "mongodb+srv://Capstone:Farmer123@cluster0.8xd2d.mongodb.net/capstone?retryWrites=true&w=majority"; 
 
 
-const mongoDB = process.env.CONNECTION; 
+const mongoDB = process.env.MONGO_STRING; 
 
 console.log(mongoDB); 
 
@@ -55,11 +56,6 @@ producersModel = mongoose.model("producers", producersSchema);
 let fileStr = fs.readFileSync("producersFinal.json", 'utf8'); 
 fileStr = fileStr.replace(/^\uFEFF/,'');
 
-
-let fileStr = fs.readFileSync("producersFinal.json", 'utf8'); 
-
-//SCHEMA here 
-let fileStr = fs.readFileSync("producers.json", 'utf8'); 
 
 let producerData = JSON.parse(fileStr); 
 //console.log(producerData); 
